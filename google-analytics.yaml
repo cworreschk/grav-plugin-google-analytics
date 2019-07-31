@@ -1,0 +1,5 @@
+enabled: true
+measurement: true
+advertising_features: true
+anonymize_ip: false
+cookie_update: true
