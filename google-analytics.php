@@ -1,11 +1,11 @@
 <?php
+
 namespace Grav\Plugin;
 
-require_once __DIR__ . '/traits/CodeGenerationTrait.php';
-
+use Composer\Autoload\ClassLoader;
 use Grav\Common\Plugin;
+use Grav\Plugin\GoogleAnalytics\Utils;
 use RocketTheme\Toolbox\Event\Event;
-
 
 /**
  * Class GoogleAnalyticsPlugin
@@ -13,7 +13,7 @@ use RocketTheme\Toolbox\Event\Event;
  */
 class GoogleAnalyticsPlugin extends Plugin
 {
-    use CodeGenerationTrait;
+//    use CodeGenerationTrait;
 
     /** @var string $trackingId */
     protected $trackingId;
@@ -21,28 +21,45 @@ class GoogleAnalyticsPlugin extends Plugin
     /**
      * @return array
      */
-    public static function getSubscribedEvents() : array
+    public static function getSubscribedEvents(): array
     {
         return [
-            'onPluginsInitialized' => ['onPluginsInitialized', 0]
+            'onPluginsInitialized' => [
+                ['autoload', 100001],
+                ['onPluginsInitialized', 0]
+            ]
         ];
+    }
+
+    /**
+     * [onPluginsInitialized:100000] Composer autoload.
+     *
+     * @return ClassLoader
+     */
+    public function autoload(): ClassLoader
+    {
+        return require __DIR__ . '/vendor/autoload.php';
     }
 
     /**
      * Initialize the plugin
      */
-    public function onPluginsInitialized() : void
+    public function onPluginsInitialized(): void
     {
         // Don't proceed if we are in the admin plugin
-        if ($this->isAdmin()) return;
+        if ($this->isAdmin()) {
+            return;
+        }
 
         // Don't proceed if the IP address is blocked
         $blockedIps = $this->config->get('plugins.google-analytics.blocked_ips', []);
-        if (in_array($this->getIpAddress(), $blockedIps)) return;
+        if (in_array(Utils::getIpAddress(), $blockedIps, true)) {
+            return;
+        }
 
         // Don't proceed if there is no GA Tracking ID
         $this->trackingId = trim($this->config->get('plugins.google-analytics.tracking_id', ''));
-        if (empty($this->trackingId)){
+        if (empty($this->trackingId)) {
             $this->grav['debugger']->addMessage('Google Analytics Plugin: No Tracking ID configured!', 'error');
             return;
         }
@@ -58,13 +75,14 @@ class GoogleAnalyticsPlugin extends Plugin
      *
      * @param Event $e
      */
-    public function onOutputGenerated(Event $e) : void
+    public function onOutputGenerated(Event $e): void
     {
+        $code = Utils::generateAnalyticsCode($this->config);
         $code = implode(PHP_EOL, [
             '<!-- Global site tag (gtag.js) - Google Analytics -->',
             "<script src=\"https://www.googletagmanager.com/gtag/js?id={$this->trackingId}\" async></script>",
             '<script>',
-            "  {$this->generateAnalyticsCode()}",
+            "  {$code}",
             '</script>',
         ]);
 

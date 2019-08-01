@@ -1,0 +1,37 @@
+PLUGIN_GOOGLE_ANALYTICS:
+
+  ADVERTISING_FEATURES: "Werbefunktionen deaktivieren"
+  ADVERTISING_FEATURES_HELP: "Da die Webefunktionen im Google Analytics Adminbereich aktiviert werden können, gibt es die Möglichkeit diese auch programmatisch zu deaktivieren."
+
+  ANONYMIZE_IP: "IP-Anonymisierung"
+  ANONYMIZE_IP_HELP: "Anonymisierung der IP-Adressen welche an Google Analytics gesendet werden"
+
+  BLOCKED_IPS: "Blockierte IP-Adressen"
+  BLOCKED_IPS_HELP: "Für die angegebenen IP-Adressen wird der Google Analytics Code nicht eingebunden"
+
+  COOKIE_DOMAIN: "Domain"
+  COOKIE_DOMAIN_HELP: "Überschreiben der autom. Domain-Konfiguration des Cookies"
+
+  COOKIE_EXPIRATION: "Haltbarkeitszeit"
+  COOKIE_EXPIRATION_HELP: "Haltbarkeitszeit des Cookies in Sekunden. Standard sind 28 Tage"
+
+  COOKIE_PREFIX: "Präfix"
+  COOKIE_PREFIX_HELP: "Um Namenskonflikte zu vermeiden, kann der Präfix des Cookies umbenannt werden"
+
+  COOKIE_UPDATE: "Aktualisierung"
+  COOKIE_UPDATE_HELP: "Im Falle von \"Deaktiviert\", wird das Cookie nicht bei jedem Seitenaufruf aktualisiert"
+
+  OBJECT_NAME: "Globales gtag() Objekt"
+  OBJECT_NAME_HELP: "Um Namenskonflikte zu vermeiden, kann das globale gtag() Objekt umbenannt werden"
+
+  OPT_OUT: "Analytics für Opt-Out Nutzer deaktivieren"
+  OPT_OUT_HELP: "Google Analytics deaktivieren ohne es zu entfernen. Z.B. wenn die Seite die Möglichkeit bietet, sich von Google Analytics abzumelden."
+
+  SECONDS: "Sekunden"
+
+  SECTION_ADVANCED: "Erweiterte Einstellungen"
+  SECTION_COOKIE: "Cookie"
+
+  TACKING_ID: "Tracking-ID"
+  TACKING_ID_HELP: "Google Analytics Tracking-ID"
+

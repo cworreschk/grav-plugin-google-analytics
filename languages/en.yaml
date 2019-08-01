@@ -19,13 +19,13 @@ PLUGIN_GOOGLE_ANALYTICS:
   COOKIE_PREFIX_HELP: "Rename the cookie prefix to avoid name conflicts"
 
   COOKIE_UPDATE: "Update"
-  COOKIE_UPDATE_HELP: "When set to false, cookies are not updated on each page load."
+  COOKIE_UPDATE_HELP: "When set to false, cookies are not updated on each page load"
 
   OBJECT_NAME: "Global gtag() Object"
   OBJECT_NAME_HELP: "Rename the global gtag() object to avoid name conflicts"
 
   OPT_OUT: "Disable Analytics for opted-out users"
-  OPT_OUT_HELP: "Disable Google Analytics on a page without removing the gtag.js tag. For example if your site has an option for the user to opt-out of Google Analytics"
+  OPT_OUT_HELP: "Disable Google Analytics without removing the gtag.js tag. For example if your site has an option for the user to opt-out of Google Analytics"
 
   SECTION_ADVANCED: "Advanced"
   SECTION_COOKIE: "Cookie"

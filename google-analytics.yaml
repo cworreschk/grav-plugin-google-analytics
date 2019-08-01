@@ -1,5 +1,11 @@
 enabled: true
-measurement: true
-advertising_features: true
+tracking_id: ""
+
+blocked_ips: []
+object_name: ""
+opt_out: true
+advertising_features_disabled: false
 anonymize_ip: false
+cookie_domain: ""
+cookie_expires: ~
 cookie_update: true

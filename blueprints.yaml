@@ -1,6 +1,6 @@
 name: Google Analytics (gtag.js)
-version: 0.1.0
-description: Integrate and configure the global site tag (gtag.js) framework to send event data to Google Analytics.
+version: 1.1.0
+description: Easily Integrate and configure Google Analytics with the global site tag (gtag.js) framework and API.
 icon: google
 author:
   name: Christian Worreschk
@@ -31,7 +31,7 @@ form:
       size: small
       label: PLUGIN_GOOGLE_ANALYTICS.TACKING_ID
       help: PLUGIN_GOOGLE_ANALYTICS.TACKING_ID_HELP
-      placeholder: "UA-00000000-0"
+      placeholder: "UA-00000000-1"
       validate:
         required: true
 
@@ -66,12 +66,12 @@ form:
       validate:
         type: bool
 
-    advertising_features:
+    advertising_features_disabled:
       type: toggle
       label: PLUGIN_GOOGLE_ANALYTICS.ADVERTISING_FEATURES
       help: PLUGIN_GOOGLE_ANALYTICS.ADVERTISING_FEATURES_HELP
       hightlight: 1
-      default: 1
+      default: 0
       options:
         1: PLUGIN_ADMIN.ENABLED
         0: PLUGIN_ADMIN.DISABLED
@@ -100,14 +100,14 @@ form:
       label: PLUGIN_GOOGLE_ANALYTICS.COOKIE_DOMAIN
       help: PLUGIN_GOOGLE_ANALYTICS.COOKIE_DOMAIN_HELP
       size: small
-      placeholder: auto
+      placeholder: "blog.example.com"
 
     cookie_expires:
       type: text
       size: small
       label: PLUGIN_GOOGLE_ANALYTICS.COOKIE_EXPIRATION
       help: PLUGIN_GOOGLE_ANALYTICS.COOKIE_EXPIRATION_HELP
-      append: Seconds
+      append: PLUGIN_GOOGLE_ANALYTICS.SECONDS
       placeholder: 63072000
       validate:
         type: number
