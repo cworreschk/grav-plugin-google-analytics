@@ -3,8 +3,8 @@ tracking_id: ""
 
 blocked_ips: []
 object_name: ""
-opt_out: true
-advertising_features_disabled: false
+opt_out: false
+advertising_features: true
 anonymize_ip: false
 cookie_domain: ""
 cookie_expires: ~

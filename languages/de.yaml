@@ -1,7 +1,7 @@
 PLUGIN_GOOGLE_ANALYTICS:
 
-  ADVERTISING_FEATURES: "Werbefunktionen deaktivieren"
-  ADVERTISING_FEATURES_HELP: "Da die Webefunktionen im Google Analytics Adminbereich aktiviert werden können, gibt es die Möglichkeit diese auch programmatisch zu deaktivieren."
+  ADVERTISING_FEATURES: "Werbefunktionen"
+  ADVERTISING_FEATURES_HELP: "Da die Webefunktionen im Google Analytics Adminbereich aktiviert werden, können Sie hier programmatisch deaktiviert werden"
 
   ANONYMIZE_IP: "IP-Anonymisierung"
   ANONYMIZE_IP_HELP: "Anonymisierung der IP-Adressen welche an Google Analytics gesendet werden"
@@ -24,8 +24,8 @@ PLUGIN_GOOGLE_ANALYTICS:
   OBJECT_NAME: "Globales gtag() Objekt"
   OBJECT_NAME_HELP: "Um Namenskonflikte zu vermeiden, kann das globale gtag() Objekt umbenannt werden"
 
-  OPT_OUT: "Analytics für Opt-Out Nutzer deaktivieren"
-  OPT_OUT_HELP: "Google Analytics deaktivieren ohne es zu entfernen. Z.B. wenn die Seite die Möglichkeit bietet, sich von Google Analytics abzumelden."
+  OPT_OUT: "Unterstützung für Opt-Out Nutzer"
+  OPT_OUT_HELP: "Bei der Möglichkeit, sich von Google Analytics abzumelden, kann Google Analytics temporär deaktiviert werden ohne es zu entfernen"
 
   SECONDS: "Sekunden"
 

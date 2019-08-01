@@ -54,8 +54,8 @@ tracking_id: ""
 
 blocked_ips: []
 object_name: ""
-opt_out: true
-advertising_features_disabled: true
+opt_out: false
+advertising_features: true
 anonymize_ip: false
 cookie_domain: ""
 cookie_expires: ~
@@ -64,19 +64,19 @@ cookie_update: true
 ```
 
  
-| Option                          | Description                                                     |
-|---------------------------------|-----------------------------------------------------------------|
-| `enabled`                       | Toggles if the Google Analytics plugin is turned on or off      |
-| `tracking_id`                   | Google Analytics Tracking ID like `UA-00000000-1`               |
-| `blocked_ips`                   | For the given IP addresses the GA code will not be embedded     |
-| `object_name`                   | To avoid name conflicts the global gtag() object can be renamed |
-| `opt_out`                       | Disable Google Analytics without removing the gtag.js tag       |
-| `advertising_features_disabled` | Disable the advertising features                                | 
-| `anonymize_ip`                  | Anonymize the IP addresses of hits sent to Google Analytics     |
-| `cookie_domain`                 | Override the automatic cookie domain configuration              |
-| `cookie_expires`                | Cookie expiration time in seconds. Default is 28 days           | 
-| `cookie_prefix`                 | To avoid name conflicts you can change the prefix of the cookie | 
-| `cookie_update`                 | When set to false, cookies are not updated on each page load    | 
+| Option                 | Description                                                                  |
+|------------------------|------------------------------------------------------------------------------|
+| `enabled`              | Toggles if the Google Analytics plugin is turned on or off                   |
+| `tracking_id`          | Google Analytics Tracking ID like `UA-00000000-1`                            |
+| `blocked_ips`          | For the given IP addresses the GA code will not be embedded                  |
+| `object_name`          | To avoid name conflicts the global gtag() object can be renamed              |
+| `opt_out`              | Disable Google Analytics without removing the gtag.js tag                    |
+| `advertising_features` | Disable the advertising features, when they are enabled in the GA admin area | 
+| `anonymize_ip`         | Anonymize the IP addresses of hits sent to Google Analytics                  |
+| `cookie_domain`        | Override the automatic cookie domain configuration                           |
+| `cookie_expires`       | Cookie expiration time in seconds. Default is 28 days                        | 
+| `cookie_prefix`        | To avoid name conflicts you can change the prefix of the cookie              | 
+| `cookie_update`        | When set to false, cookies are not updated on each page load                 | 
 
 
 > **Note:** If you use the Admin Plugin, a file with your configuration named `google-analytics.yaml` will be saved in the `user/config/plugins/`-folder once the configuration is saved in the Admin.
