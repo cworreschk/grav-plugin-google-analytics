@@ -1,0 +1,35 @@
+{
+    "name": "cworreschk/grav-plugin-google-analytics",
+    "type": "grav-plugin",
+    "description": "Easily integrate and configure Google Analytics in your site with the global site tag (gtag.js) framework and API.",
+    "keywords": ["google", "tracking", "analytics", "gtag", "global site tag", "grav", "plugin"],
+    "homepage": "https://github.com/cworreschk/grav-plugin-google-analytics",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Worreschk",
+            "email": "cw@marsec.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/cworreschk/grav-plugin-google-analytics/issues",
+        "docs": "https://github.com/cworreschk/grav-plugin-google-analytics/blob/master/README.md"
+    },
+    "require": {
+        "php": ">=7.1.3"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "classmap":  [
+            "classes/",
+            "google-analytics.php"
+        ]
+    },
+    "config": {
+        "platform": {
+            "php": "7.1.3"
+        }
+    }
+}

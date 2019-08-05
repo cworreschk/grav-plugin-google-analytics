@@ -1,6 +1,6 @@
 name: Google Analytics (gtag.js)
-version: 0.1.0
-description: Integrate and configure the global site tag (gtag.js) framework to send event data to Google Analytics.
+version: 1.1.0
+description: Easily integrate and configure Google Analytics in your site with the global site tag (gtag.js) framework and API.
 icon: google
 author:
   name: Christian Worreschk
@@ -31,16 +31,10 @@ form:
       size: small
       label: PLUGIN_GOOGLE_ANALYTICS.TACKING_ID
       help: PLUGIN_GOOGLE_ANALYTICS.TACKING_ID_HELP
-      placeholder: "UA-00000000-0"
+      placeholder: "UA-00000000-1"
       validate:
         required: true
 
-    blocked_ips:
-      type: array
-      label: PLUGIN_GOOGLE_ANALYTICS.BLOCKED_IPS
-      help: PLUGIN_GOOGLE_ANALYTICS.BLOCKED_IPS_HELP
-      value_only: true
-      placeholder_value: "255.0.0.0"
 
     advanced:
       type: section
@@ -54,18 +48,6 @@ form:
       size: small
       placeholder: gtag
 
-    opt_out:
-      type: toggle
-      label: PLUGIN_GOOGLE_ANALYTICS.OPT_OUT
-      help: PLUGIN_GOOGLE_ANALYTICS.OPT_OUT_HELP
-      hightlight: 1
-      default: 0
-      options:
-        1: PLUGIN_ADMIN.ENABLED
-        0: PLUGIN_ADMIN.DISABLED
-      validate:
-        type: bool
-
     advertising_features:
       type: toggle
       label: PLUGIN_GOOGLE_ANALYTICS.ADVERTISING_FEATURES
@@ -78,10 +60,48 @@ form:
       validate:
         type: bool
 
+    blocked_ips:
+      type: array
+      label: PLUGIN_GOOGLE_ANALYTICS.BLOCKED_IPS
+      help: PLUGIN_GOOGLE_ANALYTICS.BLOCKED_IPS_HELP
+      value_only: true
+      placeholder_value: "255.0.0.0"
+
+
+    privacy:
+      type: section
+      title: PLUGIN_GOOGLE_ANALYTICS.PRIVACY
+      underline: true
+
     anonymize_ip:
       type: toggle
       label: PLUGIN_GOOGLE_ANALYTICS.ANONYMIZE_IP
       help: PLUGIN_GOOGLE_ANALYTICS.ANONYMIZE_IP_HELP
+      hightlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    do_not_track:
+      type: toggle
+      label: PLUGIN_GOOGLE_ANALYTICS.DO_NOT_TRACK
+      help: PLUGIN_GOOGLE_ANALYTICS.DO_NOT_TRACK_HELP
+      hightlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    opt_out:
+      type: toggle
+      label: PLUGIN_GOOGLE_ANALYTICS.OPT_OUT
+      help: PLUGIN_GOOGLE_ANALYTICS.OPT_OUT_HELP
+      description: PLUGIN_GOOGLE_ANALYTICS.OPT_OUT_DESCRIPTION
       hightlight: 1
       default: 0
       options:
@@ -100,14 +120,14 @@ form:
       label: PLUGIN_GOOGLE_ANALYTICS.COOKIE_DOMAIN
       help: PLUGIN_GOOGLE_ANALYTICS.COOKIE_DOMAIN_HELP
       size: small
-      placeholder: auto
+      placeholder: "blog.example.com"
 
     cookie_expires:
       type: text
       size: small
       label: PLUGIN_GOOGLE_ANALYTICS.COOKIE_EXPIRATION
       help: PLUGIN_GOOGLE_ANALYTICS.COOKIE_EXPIRATION_HELP
-      append: Seconds
+      append: PLUGIN_GOOGLE_ANALYTICS.SECONDS
       placeholder: 63072000
       validate:
         type: number
