@@ -1,11 +1,12 @@
 enabled: true
 tracking_id: ""
 
-blocked_ips: []
-object_name: ""
-opt_out: false
 advertising_features: true
 anonymize_ip: false
+blocked_ips: []
 cookie_domain: ""
 cookie_expires: ~
 cookie_update: true
+do_not_track: false
+object_name: ""
+opt_out: false

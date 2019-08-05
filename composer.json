@@ -1,7 +1,7 @@
 {
     "name": "cworreschk/grav-plugin-google-analytics",
     "type": "grav-plugin",
-    "description": "Easily Integrate and configure Google Analytics with the global site tag (gtag.js) framework and API in your Grav CMS site.",
+    "description": "Easily integrate and configure Google Analytics in your site with the global site tag (gtag.js) framework and API.",
     "keywords": ["google", "tracking", "analytics", "gtag", "global site tag", "grav", "plugin"],
     "homepage": "https://github.com/cworreschk/grav-plugin-google-analytics",
     "license": "MIT",

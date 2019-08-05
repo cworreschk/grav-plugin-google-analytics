@@ -21,11 +21,15 @@ class Utils
         $params = ['HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR', 'HTTP_X_FORWARDED', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED'];
         foreach ($params as $param) {
             if (isset($_SERVER)) {
-                if (isset($_SERVER[$param])) return $_SERVER[$param];
-            } else {
-                if (getenv($param)) return getenv($param);
+                if (isset($_SERVER[$param])){
+                    return $_SERVER[$param];
+                }
+            } elseif (getenv($param)) {
+                return getenv($param);
             }
         }
+
+        return '';
     }
 
     /**

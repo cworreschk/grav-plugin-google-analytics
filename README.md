@@ -1,20 +1,21 @@
 # Google Analytics (gtag.js) Plugin
 
 The **Google Analytics** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav).
-You can easily integrate and configure Google Analytics using the *global site tag (gtag.js)* framework and API without the need to touch any code within your Grav CMS site.
+You can easily integrate and configure Google Analytics in your Grav CMS site using the *global site tag (gtag.js)* framework and API without the need to touch any code.
 
 > **Important:** This plugin uses the *global site tag* (*gtag.js*) framework and API for sending data to Google Analytics.
 > If you prefer the deprecated *Universal Analytics* (*analytics.js*) library, please install the [Grav Google Analytics Plugin](https://github.com/escopecz/grav-ganalytics) of [John Linhart](https://github.com/escopecz) and me.
 
 ### Features
-- Easily integrate and configure Google Analytics (gtag.js) for your Grav CMS site
+- Easily integrate and configure Google Analytics (gtag.js) in your Grav CMS site
 - Disable Google Analytics for different IP addresses
 - [Rename the global gtag() object](https://developers.google.com/analytics/devguides/collection/gtagjs/renaming-the-gtag-object)
 - [Disable Analytics for opted-out users](https://developers.google.com/analytics/devguides/collection/gtagjs/user-opt-out)
 - [Disable advertising features](https://developers.google.com/analytics/devguides/collection/gtagjs/display-features)
 - [IP anonymization](https://developers.google.com/analytics/devguides/collection/gtagjs/ip-anonymization)
 - [Configure cookie settings](https://developers.google.com/analytics/devguides/collection/gtagjs/cookies-user-id)
-- Support Languages: `EN`,`DE`
+- [Do Not Track (DNT) support](https://allaboutdnt.com) 
+- Supported Languages: `EN`,`DE`
 
 ## Installation
 
@@ -52,31 +53,33 @@ Here is the default configuration and an explanation of available options:
 enabled: true
 tracking_id: ""
 
-blocked_ips: []
-object_name: ""
-opt_out: false
 advertising_features: true
 anonymize_ip: false
 cookie_domain: ""
 cookie_expires: ~
 cookie_prefix: ""
 cookie_update: true
+blocked_ips: []
+do_not_track: false
+object_name: ""
+opt_out: false
 ```
 
  
 | Option                 | Description                                                                  |
 |------------------------|------------------------------------------------------------------------------|
-| `enabled`              | Toggles if the Google Analytics plugin is turned on or off                   |
-| `tracking_id`          | Google Analytics Tracking ID like `UA-00000000-1`                            |
-| `blocked_ips`          | For the given IP addresses the GA code will not be embedded                  |
-| `object_name`          | To avoid name conflicts the global gtag() object can be renamed              |
-| `opt_out`              | Disable Google Analytics without removing the gtag.js tag                    |
+| **`enabled`**          | Toggles if the Google Analytics plugin is turned on or off                   |
+| **`tracking_id`**      | Google Analytics Tracking ID like `UA-00000000-1`                            |
 | `advertising_features` | Disable the advertising features, when they are enabled in the GA admin area | 
 | `anonymize_ip`         | Anonymize the IP addresses of hits sent to Google Analytics                  |
+| `blocked_ips`          | For the given IP addresses the GA code will not be embedded                  |
 | `cookie_domain`        | Override the automatic cookie domain configuration                           |
 | `cookie_expires`       | Cookie expiration time in seconds. Default is 28 days                        | 
 | `cookie_prefix`        | To avoid name conflicts you can change the prefix of the cookie              | 
-| `cookie_update`        | When set to false, cookies are not updated on each page load                 | 
+| `cookie_update`        | When set to false, cookies are not updated on each page load                 |
+| `do_not_track`         | Toggles if `Do Not Track (DNT)` is supported                              |
+| `object_name`          | To avoid name conflicts the global gtag() object can be renamed              |
+| `opt_out`              | Disable Google Analytics without removing the gtag.js tag                    | 
 
 
 > **Note:** If you use the Admin Plugin, a file with your configuration named `google-analytics.yaml` will be saved in the `user/config/plugins/`-folder once the configuration is saved in the Admin.

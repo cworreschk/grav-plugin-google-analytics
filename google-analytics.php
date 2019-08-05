@@ -4,6 +4,7 @@ namespace Grav\Plugin;
 
 use Composer\Autoload\ClassLoader;
 use Grav\Common\Plugin;
+use Grav\Framework\Psr7\ServerRequest;
 use Grav\Plugin\GoogleAnalytics\Utils;
 use RocketTheme\Toolbox\Event\Event;
 
@@ -13,7 +14,6 @@ use RocketTheme\Toolbox\Event\Event;
  */
 class GoogleAnalyticsPlugin extends Plugin
 {
-//    use CodeGenerationTrait;
 
     /** @var string $trackingId */
     protected $trackingId;
@@ -55,6 +55,14 @@ class GoogleAnalyticsPlugin extends Plugin
         $blockedIps = $this->config->get('plugins.google-analytics.blocked_ips', []);
         if (in_array(Utils::getIpAddress(), $blockedIps, true)) {
             return;
+        }
+
+        // Don't proceed if "Do Not Track" is activated
+        if ($this->config->get('plugins.google-analytics.do_not_track', false)) {
+            $dnt = $this->grav->get('request')->getHeader('DNT');
+            if (!empty($dnt) && ((int)$dnt[0] === 1)) {
+                return;
+            }
         }
 
         // Don't proceed if there is no GA Tracking ID
