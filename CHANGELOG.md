@@ -1,5 +1,5 @@
 # v1.1.0
-##  08/01/2019
+##  08/05/2019
 
 1. [](#new)
     * Support for `Do Not Track (DNT)`
