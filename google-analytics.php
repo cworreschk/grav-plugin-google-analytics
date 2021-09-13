@@ -94,7 +94,7 @@ class GoogleAnalyticsPlugin extends Plugin
             '</script>',
         ]);
 
-        $content = preg_replace('/<head\s?\S*?(>)/si', "$0\n\n{$code}\n", $this->grav->output);
+        $content = preg_replace('/<head(>|\s.*?>)/si', "$0\n\n{$code}\n", $this->grav->output);
         $this->grav->output = $content;
     }
 }
