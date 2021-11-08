@@ -64,7 +64,7 @@ class Utils
             $options['cookie_update'] = false;
         }
 
-        return str_replace('"', '\'', json_encode($options));
+        return str_replace("'", '\'', empty($options) ? '' : json_encode($options));
     }
 
     /**
