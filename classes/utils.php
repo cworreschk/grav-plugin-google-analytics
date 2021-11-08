@@ -90,7 +90,7 @@ class Utils
         $code[] = "{$name}('js', new Date());";
 
         $options = static::buildAnalyticsOptions($config);
-        $code[] = empty($options) ? "{$name}('config', '{$tracking_id}');" : "{$name}('config', '{$tracking_id}', {$options});";
+        $code[] = $options === '[]' ? "{$name}('config', '{$tracking_id}');" : "{$name}('config', '{$tracking_id}', {$options});";
 
         return implode("\n  ", $code);
     }
