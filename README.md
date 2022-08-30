@@ -25,7 +25,7 @@ Installing the Google Analytics plugin can be done in one of three ways: The GPM
 
 To install the plugin via the [GPM](http://learn.getgrav.org/advanced/grav-gpm), through your system's terminal (also called the command line), navigate to the root of your Grav-installation, and enter:
 
-    bin/gpm install grav-plugin-google-analytics
+    bin/gpm install google-analytics
 
 This will install the Google Analytics plugin into your `/user/plugins`-directory within Grav. Its files can be found under `/your/site/grav/user/plugins/Google Analytics`.
 
